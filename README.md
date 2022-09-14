@@ -36,7 +36,7 @@ Tarefas Técnicas
 
 História: Como usuário quero gerenciar tasks em um board
 - Frontend
- - Criar header navegável
+    - Criar header navegável
  - Criar componente de coluna
  - Criar componente de card
  - Criar componente do board
