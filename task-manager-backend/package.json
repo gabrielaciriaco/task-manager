@@ -1,0 +1,20 @@
+{
+  "name": "task-manager-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victormagalhaess/task-manager-backend.git"
+  },
+  "author": "Victor Magalhães",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victormagalhaess/task-manager-backend/issues"
+  },
+  "homepage": "https://github.com/victormagalhaess/task-manager-backend#readme"
+}
