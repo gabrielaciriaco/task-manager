@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/victormagalhaess/task-manager-backend/issues"
   },
-  "homepage": "https://github.com/victormagalhaess/task-manager-backend#readme"
+  "homepage": "https://github.com/victormagalhaess/task-manager-backend#readme",
+  "dependencies": {
+    "mongoose": "^6.7.2"
+  }
 }
