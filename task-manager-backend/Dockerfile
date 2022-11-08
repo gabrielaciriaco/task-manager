@@ -1,11 +1,13 @@
 FROM node:latest  
 
-RUN mkdir -p /usr/src/app  
+WORKDIR /usr/src/app
 
-WORKDIR /usr/src/app  
-COPY ./package.json /usr/src/app/package.json  
-RUN npm install -g  
+COPY package*.json ./
 
-EXPOSE 8080  
+RUN npm install
 
-CMD ["npm", "start"] 
+COPY . .
+
+EXPOSE 8080
+
+CMD [ "node", "index.js" ]
