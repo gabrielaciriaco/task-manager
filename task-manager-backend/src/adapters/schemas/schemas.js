@@ -3,23 +3,19 @@ import mongoose from 'mongoose'
 const CardSchema = mongoose.Schema({
   description: {
     type: String,
-    required: true
+    required: false
   },
   status: {
     type: String,
-    required: true
+    required: false
   },
   createdAt: {
     type: Date,
-    required: true
+    required: false
   },
   updatedAt: {
     type: Date,
-    required: true
-  },
-  id: {
-    type: String,
-    required: true
+    required: false
   }
 })
 
@@ -37,8 +33,7 @@ const ColumnSchema = mongoose.Schema({
     required: true
   },
   cards: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'Card',
+    type: [CardSchema],
     required: false
   }
 })

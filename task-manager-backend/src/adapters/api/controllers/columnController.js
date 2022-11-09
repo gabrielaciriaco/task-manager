@@ -18,8 +18,8 @@ const columnController = (columnService) => {
 
   const updateColumn = async (req, res) => {
     const { id } = req.params
-    const { title } = req.body
-    const column = await columnService.updateColumn(id, title)
+    const { title, cards } = req.body
+    const column = await columnService.updateColumn(id, title, cards)
     res.status(200).json(column)
   }
 
