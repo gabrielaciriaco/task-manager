@@ -47,6 +47,10 @@ const columnRepository = {
     return Column.findById(id)
   },
 
+  async getAllAsync() {
+    return Column.find({})
+  },
+
   async updateByIdAsync(id, column) {
     return Column.findByIdAndUpdate(id, column)
   },

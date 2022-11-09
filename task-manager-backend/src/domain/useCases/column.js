@@ -16,7 +16,7 @@ const createColumn = (title, email) => {
 }
 
 const getColumns = (email) => {
-  return columnRepository.getAllFromUserAsync(req.user.email)
+  return columnRepository.getAllFromUserAsync(email)
 }
 
 const getColumnById = (id) => {
