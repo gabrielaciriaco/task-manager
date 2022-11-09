@@ -3,6 +3,7 @@ class User {
     this.email = email
     this.password = password
     this.photo = photo
+    this.changePasswordToken = null
   }
 }
 

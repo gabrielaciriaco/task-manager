@@ -18,6 +18,13 @@ const userRepository = {
     return User.findOne({ email: email })
   },
 
+  async setToRestorePassword(email, token) {
+    return User.findOneAndUpdate(
+      { email: email },
+      { changePasswordToken: token }
+    )
+  },
+
   async deleteOneAsync(email) {
     return User.findOneAndDelete({ email: email })
   }
