@@ -2,7 +2,7 @@ import React, { ReactElement, useContext, useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import Button from 'components/Button'
 import LoadingContext from 'contexts/LoadingContext'
-import { verifyResetPasswordCode } from 'infra'
+import { storeAuthToken, verifyResetPasswordCode } from 'infra'
 import styles from './VerifyCode.module.scss'
 
 export default function VerifyCode(): ReactElement {
@@ -17,8 +17,9 @@ export default function VerifyCode(): ReactElement {
 
     const history = useHistory()
 
-    const onCodeVerify = () => {
+    const onCodeVerify = (newToken: string) => {
         closeLoading()
+        storeAuthToken(newToken)
         history.push(`/change-password`)
     }
 

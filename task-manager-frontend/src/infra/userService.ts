@@ -1,6 +1,11 @@
 import { User } from 'domains/user/models/User'
-import { get } from './apiService'
+import { get, put } from './apiService'
 
 const getCurrentUser = (): Promise<User> => get('user')
 
-export { getCurrentUser }
+const changePassword = (
+    email: string,
+    { password, photo }: { password: string; photo: string }
+): Promise<void> => put('user', email, { password, photo })
+
+export { getCurrentUser, changePassword }

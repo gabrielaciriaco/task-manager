@@ -23,8 +23,8 @@ const verifyResetPasswordCode = ({
 }: {
     code: string
     email: string
-}): Promise<void> => {
-    return post('verify-reset-password-code', { code, email })
+}): Promise<string> => {
+    return post('resetPassword', { token: code, email })
 }
 
 export { storeAuthToken, getAuthToken, login, logout, forgotPassword, verifyResetPasswordCode }

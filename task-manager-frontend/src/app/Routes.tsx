@@ -6,6 +6,7 @@ import ForgotPassword from 'domains/authentication/pages/ForgotPassword'
 import PrivateRoute from 'components/PrivateRoute'
 import { Insight } from 'domains/insight/pages'
 import VerifyCode from 'domains/authentication/pages/VerifyCode'
+import ChangePassword from 'domains/authentication/pages/ChangePassword'
 import NotFound from './pages/NotFound/NotFound'
 
 function Routes(): ReactElement {
@@ -20,6 +21,9 @@ function Routes(): ReactElement {
                 </Route>
                 <Route path="/verify-code">
                     <VerifyCode />
+                </Route>
+                <Route path="/change-password">
+                    <ChangePassword />
                 </Route>
                 <PrivateRoute path="/board">
                     <Board />
