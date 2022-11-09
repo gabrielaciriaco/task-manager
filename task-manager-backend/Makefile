@@ -5,4 +5,4 @@ stop:
 	docker-compose down
 
 start-local:
-	node ./index.js
+	nodemon ./index.js
