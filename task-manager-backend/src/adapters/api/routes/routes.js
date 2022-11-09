@@ -11,6 +11,7 @@ import userController from '../controllers/userController.js'
 import metricsController from '../controllers/metricsController.js'
 
 import authenticateToken from '../middlewares/authentication.js'
+import validateResetPassword from '../middlewares/resetPassword.js'
 
 const router = express.Router()
 
@@ -34,7 +35,10 @@ router.delete('/column/:id', authenticateToken, _columnController.deleteColumn)
 router.get('/user', authenticateToken, _userController.getUser)
 router.post('/user', _userController.create)
 router.post('/login', _userController.login)
-router.put('/user/:email', authenticateToken, _userController.updateUser)
+
+router.post('/forgot-password', _userController.forgotPassword)
+router.post('/reset-password', _userController.resetPassword)
+router.put('/user/:email', validateResetPassword, _userController.updateUser)
 
 router.get('/metrics', authenticateToken, _metricsController.getMetrics)
 
