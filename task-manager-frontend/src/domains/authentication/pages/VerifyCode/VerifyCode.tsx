@@ -20,7 +20,7 @@ export default function VerifyCode(): ReactElement {
     const onCodeVerify = (newToken: string) => {
         closeLoading()
         storeAuthToken(newToken)
-        history.push(`/change-password`)
+        history.push(`/change-password?email=${email}`)
     }
 
     const onError = () => {
@@ -30,8 +30,8 @@ export default function VerifyCode(): ReactElement {
 
     const handleVerifyCode = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        if (code.length !== 4) {
-            setError('The token must have 4 digits')
+        if (code.length !== 5) {
+            setError('The token must have 5 digits')
             return
         }
 
@@ -50,7 +50,7 @@ export default function VerifyCode(): ReactElement {
                 <div className={styles.title}>Verification</div>
 
                 <div className={styles.subTitle}>
-                    Enter your 4 digits code that you received on your email.
+                    Enter your 5 digits code that you received on your email.
                 </div>
 
                 <input

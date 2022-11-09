@@ -3,9 +3,7 @@ import { get, put } from './apiService'
 
 const getCurrentUser = (): Promise<User> => get('user')
 
-const changePassword = (
-    email: string,
-    { password, photo }: { password: string; photo: string }
-): Promise<void> => put('user', email, { password, photo })
+const changePassword = (email: string, { password }: { password: string }): Promise<void> =>
+    put('user', email, { password })
 
 export { getCurrentUser, changePassword }

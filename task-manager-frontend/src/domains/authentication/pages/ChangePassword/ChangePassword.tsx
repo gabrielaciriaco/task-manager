@@ -1,20 +1,26 @@
 import Button from 'components/Button'
 import LoadingContext from 'contexts/LoadingContext'
-import { changePassword, getCurrentUser } from 'infra'
+import { changePassword, getCurrentUser, login, storeAuthToken } from 'infra'
 import React, { ReactElement, useContext, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import styles from './ChangePassword.module.scss'
 
 export default function ChangePassword(): ReactElement {
     const [newPassword, setNewPassword] = useState('')
     const [confirmationPassword, setPassword] = useState('')
     const [error, setError] = useState('')
+    const location = useLocation()
+
+    const email = new URLSearchParams(location.search).get('email') || ''
 
     const { showLoading, closeLoading } = useContext(LoadingContext)
 
     const history = useHistory()
 
-    const onConfirmationPasswordSuccess = () => {
+    const onConfirmationPasswordSuccess = async () => {
+        const { token } = await login(email, newPassword)
+        storeAuthToken(token)
+
         closeLoading()
         history.push('/board')
     }
@@ -34,9 +40,7 @@ export default function ChangePassword(): ReactElement {
 
         showLoading()
 
-        const user = await getCurrentUser()
-
-        changePassword(user.email, { password: newPassword, photo: user.photo })
+        changePassword(email, { password: newPassword })
             .then(onConfirmationPasswordSuccess)
             .catch(onError)
     }
