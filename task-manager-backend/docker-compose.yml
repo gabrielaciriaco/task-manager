@@ -6,8 +6,11 @@ services:
     build: .
     ports:
       - '3000:3000'
-    links:
+    depends_on:
       - mongo
+    networks:
+      - local
+
   mongo:
     container_name: mongo
     image: mongo
@@ -15,3 +18,13 @@ services:
       - './data:/data/db'
     ports:
       - '27018:27017'
+    networks:
+      - local
+
+networks:
+  local:
+    driver: bridge
+
+
+
+
