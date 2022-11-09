@@ -1,0 +1,48 @@
+.card {
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    max-width: 20rem;
+    min-height: 1.5rem;
+
+    & > span {
+        display: block;
+    }
+
+    &:hover {
+        filter: brightness(90%);
+    }
+
+    .hoveredElement {
+        opacity: 0;
+        transition: 0.2s;
+    }
+
+    &:hover .hoveredElement {
+        opacity: 1;
+    }
+
+    .editButton {
+        position: absolute;
+        display: flex;
+        right: 0.5rem;
+        border: none;
+        background: none;
+        padding: 0;
+
+        .hideInformation {
+            display: none;
+        }
+
+        .editIcon {
+            cursor: pointer;
+        }
+    }
+
+    .description {
+        padding: 0.5rem 0;
+        font-size: var(--typography-body-2);
+        cursor: default;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

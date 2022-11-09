@@ -1,0 +1,15 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .columnWrapper {
+        flex: 1;
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+    }
+}

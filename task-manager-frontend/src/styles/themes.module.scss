@@ -1,0 +1,42 @@
+.defaultTheme {
+    --primary-main-contrast: #172b4d;
+
+    --secondary-main: #ebecf0;
+
+    --card-background: #ffffff;
+    --modal-background: #ffffff;
+
+    --app-background: #fff;
+    --app-background-constrast: #000;
+
+    --button-background-primary: #1976d2;
+    --button-background-primary-contrast: #ffffff;
+
+    --criticity-level-1: #00ac46;
+    --criticity-level-2: #fdc500;
+    --criticity-level-3: #fd8c00;
+
+    --aux-color-1: #3498db;
+
+    --overlay: rgba(0, 0, 0, 0.4);
+
+    --elevation-z1: 0 1px 0 #091e4240;
+
+    --typography-h1: 6rem;
+    --typography-h2: 3.75rem;
+    --typography-h3: 3rem;
+    --typography-h4: 2.25rem;
+    --typography-h5: 1.5rem;
+    --typography-h6: 1.25rem;
+    --typography-subtitle-1: 1rem;
+    --typography-subtitle-2: 0.875rem;
+    --typography-body-1: 1rem;
+    --typography-body-2: 1rem;
+    --typography-button: 0.8rem;
+    --typography-caption: 0.813rem;
+    --typography-overline: 0.625rem;
+
+    color: var(--primary-main-contrast);
+
+    height: 100%;
+}

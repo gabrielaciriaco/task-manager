@@ -1,0 +1,45 @@
+.column {
+    border-radius: 0.2rem;
+    height: fit-content;
+    width: fit-content;
+    min-width: 20rem;
+    padding: 0.5rem;
+    padding-bottom: 0;
+
+    .header {
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+            flex: 1;
+        }
+
+        .deleteButton {
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: fit-content;
+
+            .hideInformation {
+                display: none;
+            }
+        }
+    }
+
+    .criticity {
+        margin: 0.5rem 0;
+        display: flex;
+    }
+
+    .card {
+        padding: 16px;
+        margin-bottom: 0.5rem;
+    }
+
+    .formCard {
+        padding: 0.3rem 0.5rem;
+    }
+}
