@@ -38,7 +38,19 @@ const ColumnSchema = mongoose.Schema({
   }
 })
 
+const UserSchema = mongoose.Schema({
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
+})
+
 const Column = mongoose.model('Column', ColumnSchema)
 const Card = mongoose.model('Card', CardSchema)
+const User = mongoose.model('User', UserSchema)
 
-export { Column, Card }
+export { Column, Card, User }
