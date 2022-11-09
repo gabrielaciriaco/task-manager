@@ -54,6 +54,10 @@ const UserSchema = mongoose.Schema({
   photo: {
     type: String,
     required: false
+  },
+  changePasswordToken: {
+    type: String,
+    required: false
   }
 })
 

@@ -27,11 +27,25 @@ const userController = (userService) => {
     res.status(200).json(user)
   }
 
+  const forgotPassword = async (req, res) => {
+    const { email } = req.body
+    const user = await userService.forgotPassword(email)
+    res.status(200).json(user)
+  }
+
+  const resetPassword = async (req, res) => {
+    const { token, email } = req.body
+    const user = await userService.resetPassword(token, email)
+    res.status(200).json(user)
+  }
+
   return {
     create,
     login,
     updateUser,
-    getUser
+    getUser,
+    forgotPassword,
+    resetPassword
   }
 }
 
