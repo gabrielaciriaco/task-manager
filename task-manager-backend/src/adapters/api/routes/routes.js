@@ -24,10 +24,11 @@ router.put('/card/:id/move', authenticateToken, _cardController.moveCard)
 
 router.get('/column', authenticateToken, _columnController.getColumns)
 router.get('/column/:id', authenticateToken, _columnController.getColumnById)
-router.post('/column', authenticateToken, _columnController.createColumn)
+router.post('/column', authenticateToken, _columnController.createColumn) //done
 router.put('/column/:id', authenticateToken, _columnController.updateColumn)
 router.delete('/column/:id', authenticateToken, _columnController.deleteColumn)
 
+router.get('/user', authenticateToken, _userController.getUser)
 router.post('/user', _userController.create)
 router.post('/login', _userController.login)
 router.put('/user/:email', authenticateToken, _userController.updateUser)

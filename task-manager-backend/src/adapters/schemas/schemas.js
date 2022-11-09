@@ -35,6 +35,10 @@ const ColumnSchema = mongoose.Schema({
   cards: {
     type: [CardSchema],
     required: false
+  },
+  email: {
+    type: String,
+    required: false
   }
 })
 
@@ -46,6 +50,10 @@ const UserSchema = mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  photo: {
+    type: String,
+    required: false
   }
 })
 

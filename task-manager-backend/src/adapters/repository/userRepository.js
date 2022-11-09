@@ -4,7 +4,8 @@ const userRepository = {
   async createOneAsync(user) {
     const newUser = new User({
       email: user.email,
-      password: user.password
+      password: user.password,
+      photo: user.photo
     })
     return User.create(newUser)
   },

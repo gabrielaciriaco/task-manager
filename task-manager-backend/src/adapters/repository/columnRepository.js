@@ -7,13 +7,14 @@ const columnRepository = {
       createdAt: column.createdAt,
       updatedAt: column.updatedAt,
       id: column.id,
-      cards: column.cards
+      cards: column.cards,
+      email: column.email
     })
     return Column.create(newColumn)
   },
 
-  async getAllAsync() {
-    return Column.find({})
+  async getAllFromUserAsync(email) {
+    return Column.find({ email: email })
   },
 
   async getAllCardsAsync() {
