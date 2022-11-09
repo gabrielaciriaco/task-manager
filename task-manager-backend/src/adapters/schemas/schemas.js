@@ -6,7 +6,7 @@ const CardSchema = mongoose.Schema({
     required: false
   },
   status: {
-    type: String,
+    type: Number,
     required: false
   },
   createdAt: {
