@@ -13,7 +13,8 @@ const create = (email, password, photo) => {
 const login = async (email, password) => {
   const hashedPassword = Buffer.from(password).toString('base64')
   const user = await userRepository.getOneByEmailAsync(email)
-  if (user.password === hashedPassword) {
+
+  if (user?.password === hashedPassword) {
     const token = jwt.sign({ email }, config.tokenSecret, {
       expiresIn: '1h'
     })

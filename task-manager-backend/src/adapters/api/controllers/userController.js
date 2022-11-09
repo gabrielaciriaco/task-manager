@@ -8,7 +8,10 @@ const userController = (userService) => {
   const login = async (req, res) => {
     const { email, password } = req.body
     const token = await userService.login(email, password)
-    res.status(200).json(token)
+    if (token) {
+      return res.status(200).json({ token })
+    }
+    res.status(401).json(token)
   }
 
   const updateUser = async (req, res) => {
