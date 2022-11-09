@@ -1,7 +1,7 @@
 const userController = (userService) => {
   const create = async (req, res) => {
-    const { email, password } = req.body
-    const user = await userService.create(email, password)
+    const { email, password, photo } = req.body
+    const user = await userService.create(email, password, photo)
     res.status(201).json(user)
   }
 
@@ -13,15 +13,22 @@ const userController = (userService) => {
 
   const updateUser = async (req, res) => {
     const { email } = req.params
-    const { password } = req.body
-    const user = await userService.update(email, password)
+    const { password, photo } = req.body
+    const user = await userService.update(email, password, photo)
+    res.status(200).json(user)
+  }
+
+  const getUser = async (req, res) => {
+    const email = req.user.email
+    const user = await userService.get(email)
     res.status(200).json(user)
   }
 
   return {
     create,
     login,
-    updateUser
+    updateUser,
+    getUser
   }
 }
 

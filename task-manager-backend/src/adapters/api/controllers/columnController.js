@@ -1,12 +1,12 @@
 const columnController = (columnService) => {
   const createColumn = async (req, res) => {
     const { title } = req.body
-    const column = await columnService.createColumn(title)
+    const column = await columnService.createColumn(title, req.user.email)
     res.status(201).json(column)
   }
 
   const getColumns = async (req, res) => {
-    const columns = await columnService.getColumns()
+    const columns = await columnService.getColumns(req.user.email)
     res.status(200).json(columns)
   }
 
